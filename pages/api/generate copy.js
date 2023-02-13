@@ -16,9 +16,7 @@ export default async function (req, res) {
     return;
   }
 
-  const animal = req.body || '';
-
-  // const animal = req.body.animal || '';
+  const animal = req.body.animal || '';
   if (animal.trim().length === 0) {
     res.status(400).json({
       error: {
@@ -32,12 +30,8 @@ export default async function (req, res) {
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
       prompt: generatePrompt(animal),
-      // temperature: 0.6,
+      temperature: 0.6,
       max_tokens:3000,
-      temperature : 0.9,
-      // length : 150,
-      top_p : 1
-
     });
     res.status(200).json({ result: completion.data.choices[0].text });
     console.log(completion.data);
