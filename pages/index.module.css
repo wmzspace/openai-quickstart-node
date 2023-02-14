@@ -66,6 +66,9 @@
   margin: 40px 0;
   /* text-indent: 2rem; */
   text-align: justify;
+  /* max-width: 30px; */
+  white-space: pre-wrap;
+  word-wrap: break-word;
   /* margin: 40px 30%; */
   /* min-width: 400px; */
 }
