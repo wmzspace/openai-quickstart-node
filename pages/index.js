@@ -74,7 +74,7 @@ export default function Home() {
             onChange={(e) => setAnimalInput(e.target.value)}
           />
           <input type="submit" value="发送" />
-          <div className={styles.result}>{result}</div>
+          <pre className={styles.result}>{result}</pre>
         </form>
         <footer>
           Copyright &copy; 2023 Mianzi
