@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build-2": "BASE_PATH=./ npm run build-2",
     "build": "next build && next export",
     "start": "next start",
     "export": "next export"

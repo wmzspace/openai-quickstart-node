@@ -22,7 +22,7 @@ export default async function (req, res) {
   if (animal.trim().length === 0) {
     res.status(400).json({
       error: {
-        message: "Please enter a valid animal",
+        message: "Please enter a valid question",
       }
     });
     return;
@@ -40,7 +40,13 @@ export default async function (req, res) {
 
     });
     res.status(200).json({ result: completion.data.choices[0].text });
-    console.log(completion.data);
+    // console.log(completion.data);
+
+    console.log("————————————————————————————————————————————")
+    console.log("Question:\n" + animal);
+    console.log("--------------------------------------------")
+    console.log(completion.data.choices[0].text);
+    console.log("————————————————————————————————————————————")
   } catch(error) {
     // Consider adjusting the error handling logic for your use case
     if (error.response) {
